@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kali-chatgpt-mcp"
+version = "0.1.0"
+description = "MCP bridge from an AI client to an authorized Kali Linux VM over SSH"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "GPL-3.0-only"}
+dependencies = [
+    "mcp>=1.0.0",
+    "paramiko>=3.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+kali-chatgpt-mcp = "kali_chatgpt_mcp.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
